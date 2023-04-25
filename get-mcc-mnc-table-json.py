@@ -28,4 +28,7 @@ with urllib.request.urlopen('http://mcc-mnc.com/') as f:
 
                 mcc_mnc_list.append(current_item)
 
-    print(json.dumps(mcc_mnc_list, indent=2))
+    j = json.dumps(mcc_mnc_list, indent=2)
+    with open('mcc-mnc-table.json', 'w') as f:
+        f.write(j)
+    print(j)
